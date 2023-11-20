@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { getHomePageVideos } from "../../store/reducers/getHomePageVideos";
 import { getSearchPageVideos } from "../../store/reducers/getSearchPageVideos";
 import { getRecommendedVideos } from "../../store/reducers/getRecommendedVideos";
@@ -6,12 +6,13 @@ import { getVideoDetails } from "../../store/reducers/getVideoDetails";
 
 const initialState = {
     videos: [],
-    currentPlaying:null,
+    currentPlaying: null,
     searchTerm:"",
     searchResults:[],
     nextPageToken:null,
     recommendedVideo:[]
 };
+
 
 const youtubeSlice = createSlice({
     name:"youtubeApp",
@@ -51,6 +52,7 @@ const youtubeSlice = createSlice({
         })
     }
 })
+
 
 export const {clearVideos,changeSearchTerm,clearSearchTerm} = youtubeSlice.actions;
 export default youtubeSlice.reducer;
